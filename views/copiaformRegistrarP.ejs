@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+   <section>
+     <div class="imgBx">
+         <img src="/img/login.jpeg">
+     </div>
+     <div class="contenBx">
+         <div class="formBx">
+             <h2>REGISTRO DE PASAPORTE</h2>
+             <form action="./crear_pasaporte" id="forreg" name="forreg" method="post">
+                 <div class="inputBx">
+                     <span>Matricula Vehiculo</span>
+                     <input type="text"name="vehMatriculabuq"id="vehMatriculabuq">
+                 </div>
+                 <div class="inputBx">
+                    <span>Peso Carga</span>
+                    <input type="text"name="pesoCarga"id="pesoCarga">
+                </div>
+
+                <div class="inputBx">
+
+                    <input type="hidden"name="reciclajeCarga"id="reciclajeCarga">
+                </div>
+
+                <div class="inputBx">
+                    <span>Reciclaje Propio</span>
+                    <input type="text"name="reciclajePropio"id="reciclajePropio">
+                </div>
+                <div class="inputBx">
+
+                    <input type="hidden"name="vehMatricularec"id="vehMatricularec">
+                </div>
+
+                 <div class="inputBx">
+
+                    <input type="hidden"name="reciclajeFaltante"id="reciclajeFaltante">
+                </div>
+                <div class="inputBx">
+
+                    <input type="hidden"name="valorTotalreciclaje"id="valorTotalreciclaje">
+                </div>
+
+                <div class="inputBx">
+                    <input type="submit" value="Sign in"name="">
+                </div>
+
+             </form>
+             <h3>Login with social media</h3>
+             <ul class="sci">
+                 <li><img src="facebook.png"></li>
+                 <li><img src="twitter.png"></li>
+                 <li><img src="instagram.png"></li>
+             </ul>
+         </div>
+     </div>
+    </section>
+</body>
+</html>

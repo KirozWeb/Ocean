@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+      <h1>Aqui el listado de usuarios</h1>
+
+      <div class = "container">
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% if (listadoUsuarios.length > 0) { %>
+
+                    <% var cont = 0;
+                       listadoUsuarios.forEach(user => {%>
+                        <tr>
+                            <th scope="row"><%= user.usuId %> </th>
+                            <td><%= user.usuNom%></td>
+                            <td><%= user.usuApe%></td>
+                            <section>
+     <div class="imgBx">
+         <img src="/img/login.jpeg">
+     </div>
+     <div class="contenBx">
+         <div class="formBx">
+             <h2>REGISTRO DE USUARIO</h2>
+             <form action="../actualizar_usuario" id="forreg" name="forreg" method="post">
+              <input  type="hidden" id="usuId" name="usuId" value="<%= user.usuId%>">
+                 <div class="inputBx">
+                     <span>Name</span>
+                     <input type="text"name="usuNom"id="usuNom" value="<%= user.usuNom%>">
+                 </div>
+                 <div class="inputBx">
+                    <span>Apellido</span>
+                    <input type="text"name="usuApe"id="usuApe" value="<%= user.usuApe%>">
+                </div>
+
+                <div class="inputBx">
+                    <span>Cedula</span>
+                    <input type="text"name="usuCedula"id="usuCedula"value="<%= user.usuCedula%>">
+                </div>
+
+                <div class="inputBx">
+                    <span>Perfil</span>
+                    <input type="text"name="usuPerfil"id="usuPerfil"value="<%= user.usuPerfil%>">
+                </div>
+                <div class="inputBx">
+                    <span>Correo</span>
+                    <input type="text"name="usuCorreo"id="usuCorreo"value="<%= user.usuCorreo%>">
+                </div>
+
+                 <div class="inputBx">
+                    <span>Clave</span>
+                    <input type="password"name="usuClave"id="usuClave"value="<%= user.usuClave%>">
+                </div>
+
+                <div class="inputBx">
+                    <input type="submit" value="Sign in"name="">
+                </div>
+
+             </form>
+             <h3>Login with social media</h3>
+             <ul class="sci">
+                 <li><img src="facebook.png"></li>
+                 <li><img src="twitter.png"></li>
+                 <li><img src="instagram.png"></li>
+             </ul>
+         </div>
+     </div>
+    </section>
+
+                            <td>@mdo</td>
+                        </tr>
+
+
+                  <%cont++; }) %>
+                <% } %>
+
+            </tbody>
+          </table>
+
+</div>
+</body>
+</html>

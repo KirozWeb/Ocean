@@ -1,0 +1,3 @@
+function grafica(){
+    alert("hola");
+}

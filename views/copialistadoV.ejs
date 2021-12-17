@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script type='text/javascript'>
+
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>
+      <h1>Aqui el listado de usuarios</h1>
+
+      <div class = "container" id="content">
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Matricula</th>
+                <th scope="col">Capacidad</th>
+                <th scope="col">Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% if (listadoVehiculos.length > 0) { %>
+
+                    <% var cont = 0;
+                       listadoVehiculos.forEach(user => {%>
+                        <tr>
+                            <th scope="row"><%= user.vehId %> </th>
+                            <td><%= user.vehNom%></td>
+                            <td><%= user.vehTipo%></td>
+                            <td><%= user.vehMatricula%></td>
+                            <td><%= user.vehCapacidad%></td>
+                            <td>
+                              <a href="/fragileocean/buscar_vehiculo/<%= user.vehId%>" class="btn btn-warning btn-sm">Editar</a>
+                            </td>
+                            <td>
+                              <a href="/fragileocean/borrar_vehiculo/<%= user.vehId%>" class="btn btn-warning btn-sm">Borrar</a>
+                            </td>
+
+                            <td>@mdo</td>
+                        </tr>
+
+
+                  <%cont++; }) %>
+                <% } %>
+
+            </tbody>
+          </table>
+
+</div>
+</body>
+</html>
